@@ -31,8 +31,7 @@ The current agent process may not observe a newly persisted parent-shell environ
 With `CFIND_ROOT` set for the command:
 
 1. Run `cfind --index`.
-2. Run `cfind --status`.
-3. Run `cfind --type` and confirm symbol kinds are present when supported repositories exist under the configured root.
+2. Run `cfind --type` and confirm symbol kinds are present when supported repositories exist under the configured root.
 
 Do not configure optional language, index-path, or freshness variables unless the user requests different defaults.
 

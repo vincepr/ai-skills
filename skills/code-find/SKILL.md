@@ -23,11 +23,11 @@ Use `cfind --help` for the current CLI and `cfind --type` to list symbol kinds i
 - To search for a class, record, function, method, interface, or another declaration, choose its current kind from `cfind --type`. Do not assume callable kinds are identical across languages.
 - Add `--verbose` when containing namespaces help distinguish similarly named C# symbols. Namespace is displayed metadata, not a namespace filter for other symbol kinds.
 - Narrow by repository-relative path with `--filter REGEX`.
-- Use `--from DIRECTORY` to prefer nearby repositories and paths when name ranking is otherwise comparable; proximity is especially important for exact-name matches.
-- Use `--limit`, `--quiet`, or `--commit-url` when the task needs different output volume or links.
+- Use `--limit` or `--quiet` when the task needs different output volume.
+- Use `--commit-url` when sharing or citing an exact source location from a pushed commit or feature branch.
 
 Results contain the symbol kind, name, local file and line, and usually a repository URL. Open the local result to inspect the implementation before deciding to reuse it.
 
 ## Index
 
-`cfind` creates or refreshes its index automatically when required. Use `cfind --status` to inspect it and `cfind --index` after branch or commit changes when results or links must be current immediately.
+`cfind` manages index freshness automatically and warns when an index is stale. Use `cfind --index` only when an immediate refresh is needed.
