@@ -37,6 +37,8 @@ Add the git-backed plugin to `opencode.json`, then restart OpenCode:
 }
 ```
 
+OpenCode caches git-backed plugins. A repository version bump does not refresh an existing cached install; change the configured spec to a new tag or clear the cached package.
+
 Alternatively, clone the repository and add its `skills/` directory to `skills.paths`:
 
 ```text
