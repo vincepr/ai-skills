@@ -35,3 +35,16 @@ With `CFIND_ROOT` set for the command:
 3. Run `cfind --type` and confirm symbol kinds are present when supported repositories exist under the configured root.
 
 Do not configure optional language, index-path, or freshness variables unless the user requests different defaults.
+
+## Optional Session Finder
+
+After cfind is working, ask whether the user also wants to install [sfind](https://github.com/vincepr/sfind), a local finder for Codex, OpenCode, and Claude Code sessions.
+
+If accepted and `sfind` is not already available:
+
+1. Clone `https://github.com/vincepr/sfind.git` into a writable build directory without overwriting an existing or dirty checkout.
+2. Run `cargo build --release` in the clone.
+3. Run `cargo install --path .`.
+4. Verify `sfind --version`.
+
+sfind needs no additional setup; it discovers the providers' standard session locations automatically.
