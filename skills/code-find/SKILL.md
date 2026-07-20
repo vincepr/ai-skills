@@ -1,9 +1,9 @@
 ---
-name: cfind
-description: Use when looking for classes, records, functions, interfaces, namespaces, or reusable code across repositories owned by the user, team, or company.
+name: code-find
+description: Use the cfind CLI to find local and GitHub/GitLab source locations for classes, functions, namespaces, and reusable code across user or company repositories.
 ---
 
-# cfind
+# code-find
 
 Use `cfind` to search a local index of symbols across owned repositories before reimplementing code or adding another dependency.
 

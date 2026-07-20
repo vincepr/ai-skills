@@ -16,10 +16,10 @@
       "skills": ["./skills/brainstorming"]
     },
     {
-      "name": "cfind",
+      "name": "code-find",
       "source": "./",
       "description": "Search symbols across owned repositories",
-      "skills": ["./skills/cfind"]
+      "skills": ["./skills/code-find"]
     },
     {
       "name": "systematic-debugging",
