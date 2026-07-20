@@ -1,0 +1,5 @@
+{
+  "name": "ai-skills",
+  "description": "Provider-independent engineering workflows for design, debugging, testing, and isolated Git work",
+  "license": "MIT"
+}

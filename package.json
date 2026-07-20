@@ -1,0 +1,7 @@
+{
+  "name": "ai-skills",
+  "version": "0.1.0",
+  "description": "Provider-independent engineering skills",
+  "type": "module",
+  "main": ".opencode/plugins/ai-skills.js"
+}

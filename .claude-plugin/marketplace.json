@@ -1,0 +1,37 @@
+{
+  "name": "ai-skills",
+  "owner": {
+    "name": "ai-skills contributors"
+  },
+  "plugins": [
+    {
+      "name": "ai-skills",
+      "source": "./",
+      "description": "The complete ai-skills collection"
+    },
+    {
+      "name": "brainstorming",
+      "source": "./",
+      "description": "Turn ambiguous ideas into an approved design",
+      "skills": ["./skills/brainstorming"]
+    },
+    {
+      "name": "systematic-debugging",
+      "source": "./",
+      "description": "Investigate root causes before fixing defects",
+      "skills": ["./skills/systematic-debugging"]
+    },
+    {
+      "name": "test-driven-development",
+      "source": "./",
+      "description": "Implement behavior through red-green-refactor",
+      "skills": ["./skills/test-driven-development"]
+    },
+    {
+      "name": "using-git-worktrees",
+      "source": "./",
+      "description": "Create safe isolated Git workspaces",
+      "skills": ["./skills/using-git-worktrees"]
+    }
+  ]
+}
