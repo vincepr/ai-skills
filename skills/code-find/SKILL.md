@@ -21,6 +21,7 @@ Use `cfind --help` for the current CLI and `cfind --type` to list symbol kinds i
 - Restrict a symbol kind with `cfind NAME --type KIND`.
 - Search a namespace declaration with `cfind NAMESPACE --type namespace`.
 - To search for a class, record, function, method, interface, or another declaration, choose its current kind from `cfind --type`. Do not assume callable kinds are identical across languages.
+- C# records use the distinct `record` kind, not `class`; search them with `cfind NAME --type record`.
 - Add `--verbose` when containing namespaces help distinguish similarly named C# symbols. Namespace is displayed metadata, not a namespace filter for other symbol kinds.
 - Narrow by repository-relative path with `--filter REGEX`.
 - Use `--limit` or `--quiet` when the task needs different output volume.
