@@ -16,6 +16,12 @@
       "skills": ["./skills/brainstorming"]
     },
     {
+      "name": "cfind",
+      "source": "./",
+      "description": "Search symbols across owned repositories",
+      "skills": ["./skills/cfind"]
+    },
+    {
       "name": "systematic-debugging",
       "source": "./",
       "description": "Investigate root causes before fixing defects",

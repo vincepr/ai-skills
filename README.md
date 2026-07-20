@@ -3,6 +3,7 @@
 Provider-independent engineering skills using the [Agent Skills](https://agentskills.io) format.
 
 - `brainstorming`
+- `cfind`
 - `systematic-debugging`
 - `test-driven-development`
 - `using-git-worktrees`

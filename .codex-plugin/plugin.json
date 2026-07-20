@@ -1,6 +1,6 @@
 {
   "name": "ai-skills",
-  "version": "0.1.0",
-  "description": "Provider-independent engineering workflows for design, debugging, testing, and isolated Git work",
+  "version": "0.2.0",
+  "description": "Provider-independent engineering workflows for design, code search, debugging, testing, and isolated Git work",
   "skills": "./skills/"
 }
