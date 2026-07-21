@@ -17,16 +17,15 @@ Use `cfind --help` for the current CLI.
 
 ## Search
 
-- Start with `cfind NAME`. It searches all symbol kinds, uses fuzzy matching, ranks exact names first, and labels each result with its kind.
-- Keep searches unfiltered by default, including searches for namespaces, classes, records, interfaces, methods, and functions.
+- Start with `cfind NAME` and no filters. It searches all symbol kinds and ranks exact short names strongest.
+- Add context with terms (`cfind Acme Tools PaymentProcessor`) or a qualified name (`cfind Acme.Tools.PaymentProcessor`). Terms match short and qualified names; complete coverage ranks above partial matches.
 - Use `--type KIND` only when results contain the wrong declaration kind and that distinction matters. If needed, `cfind --type` lists the kinds available in the current index.
-- C# records and interfaces appear as distinct `record` and `interface` results without requiring a type filter.
-- Add `--verbose` when containing namespaces help distinguish similarly named C# symbols. Namespace is displayed metadata, not a namespace filter for other symbol kinds.
-- Narrow by repository-relative path with `--filter REGEX`.
-- Use `--limit` or `--quiet` when the task needs different output volume.
-- Use `--commit-url` when sharing or citing an exact source location from a pushed commit or feature branch.
+- Distinct qualified names appear by default for all supported languages; use them to distinguish similar short names. Identical names appear once.
+- Compose terms with `--filter REGEX` for repository-relative paths, `--from PATH` for proximity among comparable results (default: current directory), `--limit` for count, `--quiet` for no URLs, or `--commit-url` to prefer commit-pinned links. Options may appear around terms.
 
-Results contain the symbol kind, name, local file and line, and usually a repository URL. Open the local result to inspect the implementation before deciding to reuse it.
+Results give kind, short name, any distinct qualified name, local file and one-based line, match score/state metadata, and usually a repository URL. Open the local result before reuse.
+
+A valid no-match search exits `1`, leaves stdout empty, and explains the miss on stderr; do not treat it as a CLI or index failure.
 
 ## Index
 
