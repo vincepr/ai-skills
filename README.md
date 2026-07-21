@@ -4,6 +4,8 @@ Provider-independent workflows for planning, engineering, and collaboration usin
 
 - `brainstorming`
 - `code-find`
+- `dotnet-dump-debug`
+- `dotnet-swap-package-to-local-project`
 - `grill-me`
 - `handoff`
 - `systematic-debugging`

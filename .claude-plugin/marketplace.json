@@ -50,6 +50,18 @@
       "source": "./",
       "description": "Stress-test plans through focused questions",
       "skills": ["./skills/grill-me"]
+    },
+    {
+      "name": "dotnet-swap-package-to-local-project",
+      "source": "./",
+      "description": "Test a local project in place of a NuGet package",
+      "skills": ["./skills/dotnet-swap-package-to-local-project"]
+    },
+    {
+      "name": "dotnet-dump-debug",
+      "source": "./",
+      "description": "Inspect running .NET processes through snapshots",
+      "skills": ["./skills/dotnet-dump-debug"]
     }
   ]
 }

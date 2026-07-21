@@ -1,6 +1,6 @@
 {
   "name": "ai-skills",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Provider-independent workflows for planning, engineering, and collaboration",
   "skills": "./skills/"
 }
