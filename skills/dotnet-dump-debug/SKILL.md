@@ -12,7 +12,7 @@ This is snapshot inspection, not live breakpoint debugging. Capture a fresh snap
 
 ## Prerequisites
 
-Check for `dotnet-dump` before the first snapshot. If it is missing, read [SETUP.md](SETUP.md) and complete the setup with the user's approval.
+Check for `dotnet-dump` before the first snapshot. If it is missing, read [setup.md](setup.md) and complete the setup with the user's approval.
 
 Resolve `scripts/dbg.py` relative to this skill directory. The examples below use `dbg` for either that Python script or the optional installed shim. Run commands for one session from the same working directory because sessions are keyed by repository root.
 

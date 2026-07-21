@@ -62,6 +62,12 @@
       "source": "./",
       "description": "Inspect running .NET processes through snapshots",
       "skills": ["./skills/dotnet-dump-debug"]
+    },
+    {
+      "name": "api-grafana",
+      "source": "./",
+      "description": "Use Grafana APIs with guarded writes",
+      "skills": ["./skills/api-grafana"]
     }
   ]
 }

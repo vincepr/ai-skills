@@ -11,7 +11,7 @@ The index covers Git-tracked files in cfind's enabled supported languages. Disab
 
 ## Before Searching
 
-Check that `cfind` is available and `CFIND_ROOT` names an existing directory. If either is missing or invalid, read [installation.md](installation.md) and complete only the missing setup. Otherwise, do not load the installation reference.
+Check that `cfind` is available and `CFIND_ROOT` names an existing directory. If either is missing or invalid, read [setup.md](setup.md) and complete only the missing setup. Otherwise, do not load the setup reference.
 
 Use `cfind --help` for the current CLI.
 

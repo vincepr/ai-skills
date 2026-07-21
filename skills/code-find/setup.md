@@ -1,4 +1,4 @@
-# Installing and Configuring cfind
+# cfind Setup
 
 Read this file only when `cfind` is unavailable or `CFIND_ROOT` is missing or invalid.
 

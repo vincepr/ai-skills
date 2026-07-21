@@ -2,6 +2,7 @@
 
 Provider-independent workflows for planning, engineering, and collaboration using the [Agent Skills](https://agentskills.io) format.
 
+- `api-grafana`
 - `brainstorming`
 - `code-find`
 - `dotnet-dump-debug`
