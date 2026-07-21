@@ -5,10 +5,12 @@ Provider-independent workflows for planning, engineering, and collaboration usin
 - `api-grafana`
 - `brainstorming`
 - `code-find`
+- `code-review`
 - `dotnet-dump-debug`
 - `dotnet-swap-package-to-local-project`
 - `grill-me`
 - `handoff`
+- `review-gate`
 - `systematic-debugging`
 - `test-driven-development`
 - `using-git-worktrees`

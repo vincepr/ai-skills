@@ -1,6 +1,7 @@
 ---
 name: api-grafana
 description: Use Grafana's HTTP API to inspect and manage dashboards, folders, data sources, and alerting resources with permission-aware, guarded writes.
+disable-model-invocation: true
 ---
 
 # Use the Grafana HTTP API

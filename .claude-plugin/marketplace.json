@@ -22,6 +22,18 @@
       "skills": ["./skills/code-find"]
     },
     {
+      "name": "code-review",
+      "source": "./",
+      "description": "Review changes against standards and specifications",
+      "skills": ["./skills/code-review"]
+    },
+    {
+      "name": "review-gate",
+      "source": "./",
+      "description": "Review, fix, verify, and commit changes",
+      "skills": ["./skills/review-gate"]
+    },
+    {
       "name": "systematic-debugging",
       "source": "./",
       "description": "Investigate root causes before fixing defects",

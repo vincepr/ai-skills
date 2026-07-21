@@ -1,6 +1,6 @@
 {
   "name": "ai-skills",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Provider-independent workflows for planning, engineering, and collaboration",
   "type": "module",
   "main": ".opencode/plugins/ai-skills.js"

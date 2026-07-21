@@ -5,98 +5,71 @@ description: Use before changing production code for a feature, bug fix, behavio
 
 # Test-Driven Development
 
-Write the test first. Watch it fail for the expected reason. Write only enough code to pass.
+Work in vertical slices: specify one observable behavior, watch its test fail for the expected reason, write only enough code to pass, then improve the design while green.
 
 <HARD-GATE>
 Do not write new production behavior without first observing a test fail because that behavior is missing or wrong.
 </HARD-GATE>
 
-Use TDD for features, bug fixes, and behavior changes. For a pure behavior-preserving refactor, first establish a green test baseline that covers the behavior, then keep it green throughout.
+Use TDD for features, bug fixes, and behavior changes. For a behavior-preserving refactor, first establish a green test baseline that covers the behavior, then keep it green.
 
-Exceptions such as generated code, declarative configuration, and throwaway prototypes must be explicit and agreed rather than silently treated as TDD.
+Follow the project's test conventions, architectural decisions, and domain vocabulary. Make exceptions such as generated code, declarative configuration, and throwaway prototypes explicit and get user agreement.
 
 ## If Code Was Written First
 
-If you wrote production implementation before observing a meaningful failing test, remove only your premature implementation and restart from the test.
-
-Do not keep it as a reference, adapt the test around it, or leave it commented out. That biases the test toward what was built instead of what is required.
+If you wrote production implementation before observing a meaningful failing test, remove only your premature implementation and restart from the test. Do not retain it as a reference, adapt the test around it, or leave it commented out; that biases the test toward what was built rather than what is required.
 
 Never delete or revert pre-existing code, user changes, or unrelated work to enforce this rule.
 
 ## Red: Specify One Behavior
 
 1. Choose the smallest next observable behavior.
-2. Write one focused test through the public interface.
-3. Give it a name that describes the expected behavior.
-4. Prefer real code and collaborators; mock only a necessary boundary.
-5. Run the test and inspect the failure.
+2. Choose the public boundary where that behavior can be observed.
+3. Write one focused test with a name that describes the expected behavior.
+4. Derive the expected result independently from the code under test, using the requirement, specification, or a worked example.
+5. Prefer real code and collaborators; mock only a necessary boundary.
+6. Run the test and inspect the failure.
 
 A valid RED state means:
 
-- the test fails, rather than crashing during setup
-- the failure message matches the intended missing or incorrect behavior
+- the test fails rather than crashing during setup
+- the failure matches the intended missing or incorrect behavior
 - the failure is not caused by a typo, broken fixture, or unrelated error
 
-If the test passes immediately, it does not prove the new behavior. Determine whether the behavior already exists or the test does not exercise it.
+If the test passes immediately, determine whether the behavior already exists or the test does not exercise it. A passing test cannot prove that it detects the missing behavior.
+
+Complete this test-to-implementation cycle before specifying the next behavior. Do not write a batch of tests for imagined future behavior.
 
 ## Green: Make the Smallest Change
 
-Write the simplest production code that makes the failing test pass.
+Write the simplest production code that makes the failing test pass. Do not add speculative options, unrelated cleanup, broad abstractions, or behavior not required by the current test.
 
-Do not add speculative options, unrelated cleanup, broad abstractions, or behavior not required by the current test. Run the focused test, then the relevant existing tests.
-
-If a valid test still fails, change production code rather than weakening the requirement encoded by the test.
-
-### Example
-
-For a defect where blank names are accepted:
-
-```text
-RED:   submit({ name: " " }) should return "Name required"
-RUN:   confirm it fails because no validation result is returned
-GREEN: add only the blank-name guard
-RUN:   confirm the focused test and relevant suite pass
-```
-
-The RED check proves the test detects the defect. The GREEN change does not add unrelated validation or refactoring.
+Run the focused test, then the relevant existing tests. If a valid test still fails, change production code rather than weakening the requirement encoded by the test.
 
 ## Refactor: Improve Structure While Green
 
-Only after all relevant tests pass:
+Only after all relevant tests pass, remove duplication, improve names and boundaries, simplify implementation and test setup, and extract helpers when they clarify the design.
 
-- remove duplication
-- improve names and boundaries
-- simplify implementation and test setup
-- extract helpers when they make the design clearer
+Do not add behavior during refactoring. Keep tests green, then start the next cycle with the next failing test.
 
-Do not add behavior during refactoring. Keep tests green, then begin the next cycle with the next failing test.
+## Test Quality
 
-## Why the Order Matters
-
-A test written after implementation often passes immediately. That cannot show that the test would have caught the missing behavior and tends to encode the implementation rather than the requirement.
-
-Test-first development forces API and edge-case decisions before implementation and proves the test can detect the absence of the behavior.
-
-Manual testing is useful for exploration but is not a repeatable regression check. Record important behavior in automated tests.
-
-## Good Tests
-
-- Test observable behavior, not private implementation details.
+- Test observable behavior through public interfaces, not private implementation details.
 - Keep each test focused enough that a failure has one clear meaning.
 - Make the test demonstrate the intended API.
 - Cover important error paths and boundaries, not only the happy path.
-- Use real collaborators when practical.
+- Do not recompute expected values with the implementation's algorithm.
 - When mocking, preserve the real contract and required side effects.
 
 Read [testing-anti-patterns.md](testing-anti-patterns.md) when changing tests, introducing mocks, or considering test-only production APIs.
 
 ## Existing and Exploratory Code
 
-Exploration can clarify an unfamiliar API or design. Keep it disposable. Once the direction is understood, discard the exploratory implementation and begin the production change from RED.
+Keep exploratory implementation disposable. Once the direction is understood, discard it and begin the production change from RED.
 
-For legacy code without coverage, add a characterization test around the behavior being changed. Do not require unrelated legacy code to be retrofitted first.
+For legacy code without coverage, add a characterization test around the behavior being changed; do not require unrelated legacy code to be retrofitted first.
 
-For a defect, confirm the root cause before applying TDD to the fix. If that investigation has not already happened, use `systematic-debugging` when available; otherwise reproduce the issue, trace the failing data or state to its source, and test one hypothesis at a time. Then write a regression test for the confirmed failure before applying the fix.
+For a defect, confirm the root cause before applying TDD. Use `systematic-debugging` when available; otherwise reproduce the issue, trace it to its source, and test one hypothesis at a time. Then write a regression test for the confirmed failure before fixing it.
 
 ## When Testing Is Difficult
 
@@ -108,16 +81,14 @@ Treat testing difficulty as design feedback:
 | The test is complicated | Simplify the public interface or responsibilities. |
 | Everything must be mocked | Reduce coupling or inject the boundary. |
 | Setup dominates the test | Extract fixtures; if still large, reconsider the design. |
-| Mocks are more complex than real collaborators | Prefer a focused integration test. |
+| Mocks exceed real collaborators in complexity | Prefer a focused integration test. |
 
-## Completion Checklist
+## Completion Check
 
 - Every changed behavior was driven by a meaningful RED state.
-- Each RED failure occurred for the expected reason.
 - Production changes were the minimum needed for GREEN.
-- Refactoring happened only while tests were green.
-- Focused and relevant broader tests pass.
-- Test output has no unexplained errors or warnings.
-- Important errors and edge cases are covered.
+- Refactoring happened only while relevant tests were green.
+- Focused and relevant broader tests pass without unexplained errors or warnings.
+- Important error paths and boundaries are covered.
 
 If the test never failed first, the work may be tested, but it was not test-driven.
