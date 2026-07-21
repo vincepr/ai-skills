@@ -18,6 +18,7 @@ Use `cfind --help` for the current CLI.
 ## Search
 
 - Start with `cfind NAME` and no filters. It searches all symbol kinds and ranks exact short names strongest.
+- Use `cfind NAME --rough` to find relevant repositories, namespaces, or enclosing types, then normal search to drill into symbols. Rough mode groups before `--limit`; other options compose.
 - Add context with terms (`cfind Acme Tools PaymentProcessor`) or a qualified name (`cfind Acme.Tools.PaymentProcessor`). Terms match short and qualified names; complete coverage ranks above partial matches.
 - Use `--type KIND` only when results contain the wrong declaration kind and that distinction matters. If needed, `cfind --type` lists the kinds available in the current index.
 - Distinct qualified names appear by default for all supported languages; use them to distinguish similar short names. Identical names appear once.
