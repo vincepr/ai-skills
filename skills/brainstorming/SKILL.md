@@ -1,6 +1,7 @@
 ---
 name: brainstorming
 description: Use before creating features, components, APIs, workflows, or architecture, or modifying existing behavior.
+disable-model-invocation: true
 ---
 
 # Brainstorming
