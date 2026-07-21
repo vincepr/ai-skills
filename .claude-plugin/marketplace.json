@@ -1,7 +1,7 @@
 {
   "name": "ai-skills",
   "owner": {
-    "name": "ai-skills contributors"
+    "name": "vincepr"
   },
   "plugins": [
     {
@@ -38,6 +38,18 @@
       "source": "./",
       "description": "Create safe isolated Git workspaces",
       "skills": ["./skills/using-git-worktrees"]
+    },
+    {
+      "name": "handoff",
+      "source": "./",
+      "description": "Create a reusable session handoff",
+      "skills": ["./skills/handoff"]
+    },
+    {
+      "name": "grill-me",
+      "source": "./",
+      "description": "Stress-test plans through focused questions",
+      "skills": ["./skills/grill-me"]
     }
   ]
 }

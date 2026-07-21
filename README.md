@@ -1,9 +1,11 @@
 # ai-skills
 
-Provider-independent engineering skills using the [Agent Skills](https://agentskills.io) format.
+Provider-independent workflows for planning, engineering, and collaboration using the [Agent Skills](https://agentskills.io) format.
 
 - `brainstorming`
 - `code-find`
+- `grill-me`
+- `handoff`
 - `systematic-debugging`
 - `test-driven-development`
 - `using-git-worktrees`
